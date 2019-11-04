@@ -1,0 +1,41 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/pingtuan/index",
+    "pages/dingdan/index",
+    "pages/huiyuan/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "pages/images/index1.png",
+      "selectedIconPath": "pages/images/index.png"
+    },
+    {
+      "pagePath": "pages/pingtuan/index",
+      "text": "拼团",
+      "iconPath": "pages/images/pingtuan1.png",
+      "selectedIconPath": "pages/images/pingtuan.png"
+    },
+    {
+      "pagePath": "pages/dingdan/index",
+      "text": "订单",
+      "iconPath": "pages/images/dingdan1.png",
+      "selectedIconPath": "pages/images/dingdan.png"
+    },
+    {
+      "pagePath": "pages/huiyuan/index",
+      "text": "会员",
+      "iconPath": "pages/images/huiyan1.png",
+      "selectedIconPath": "pages/images/huiyan.png"
+    }]
+  },
+  "sitemapLocation": "sitemap.json"
+}
