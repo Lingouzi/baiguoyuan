@@ -1,9 +1,11 @@
 {
   "pages": [
+    "pages/login/index",
     "pages/index/index",
     "pages/pingtuan/index",
     "pages/dingdan/index",
     "pages/huiyuan/index"
+ 
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,8 +14,10 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
+    "color": "#82868c",
+    "selectedColor": "#008c3c",
     "list": [{
-      "pagePath": "pages/index/index",
+      "pagePath": "pages/login/index",
       "text": "首页",
       "iconPath": "pages/images/index1.png",
       "selectedIconPath": "pages/images/index.png"

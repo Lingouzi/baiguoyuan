@@ -182,4 +182,19 @@
 .icon-lipinka:before {
   content: "\e8b2";
 }
+.col1{color: #008c3c;}
+.col2{color: #82868c;}
+.col3{color: #666;}
+.col4{color: #fff;}
+.col5{color: #000;}
+.fz20{font-size: 20rpx;}
+.fz30{font-size: 30rpx;}
+.fz40{font-size: 40rpx;}
+.mlr50{
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}
+.tc{text-align: center;}
+.tr{text-align: right;}
+.tl{text-align: left;}
 

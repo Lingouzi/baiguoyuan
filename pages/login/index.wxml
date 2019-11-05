@@ -1,0 +1,14 @@
+<!--pages/login/index.wxml-->
+<view class="page1">
+<view class="tc">
+  <view class="logo"><image src="../images/logo.png" class="logoimg"></image></view>
+  <view class="name">百果园+</view>
+</view>
+<view>
+  <button class="btn1 fz30">微信用户快捷登录</button>
+  <button class="btn2 fz30">手机号登录/注册</button>
+</view>
+<view class="fz20 col2">
+点击"注册/登录"即表示您同意<text class="col1">《百果园用户服务条款》</text>和<text class="col1">>不好吃三无退款规则</text>
+</view>
+</view>

@@ -1,0 +1,27 @@
+/* pages/login/index.wxss */
+.page1{
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+}
+.logoimg{
+  width: 180rpx;
+  height: 180rpx;
+}
+.logo{
+  margin-top: 200rpx;
+  margin-bottom: 50rpx;
+}
+.btn1{
+  background-color: #0bb908;
+  color: #fff;
+}
+.btn2{
+  border-color: #0bb908;
+  color: #0bb908;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+.name{
+  margin-bottom: 230rpx;
+  font-size: 40rpx;
+}
