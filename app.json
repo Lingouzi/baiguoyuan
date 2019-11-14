@@ -1,10 +1,12 @@
 {
   "pages": [
+    "pages/myinfo/index",
     "pages/login/index",
     "pages/index/index",
     "pages/pingtuan/index",
     "pages/dingdan/index",
     "pages/huiyuan/index"
+
  
   ],
   "window": {
@@ -17,7 +19,7 @@
     "color": "#82868c",
     "selectedColor": "#008c3c",
     "list": [{
-      "pagePath": "pages/login/index",
+      "pagePath": "pages/myinfo/index",
       "text": "首页",
       "iconPath": "pages/images/index1.png",
       "selectedIconPath": "pages/images/index.png"
@@ -35,7 +37,7 @@
       "selectedIconPath": "pages/images/dingdan.png"
     },
     {
-      "pagePath": "pages/huiyuan/index",
+      "pagePath": "pages/login/index",
       "text": "会员",
       "iconPath": "pages/images/huiyan1.png",
       "selectedIconPath": "pages/images/huiyan.png"

@@ -5,6 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
+    name:'未填写',
+    sex:'女',
+    birthday:'未填写',
+    card:'普卡会员'
 
   },
 
