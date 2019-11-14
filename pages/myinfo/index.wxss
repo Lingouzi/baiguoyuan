@@ -1,0 +1,17 @@
+/* pages/myinfo/index.wxss */
+.psty1{
+  border-bottom: 1rpx solid #f4f4f4;
+  padding: 30rpx 0 30rpx 40rpx;
+  display: flex;
+  justify-content:space-between
+}
+.psty2{
+  background-color:#f4f4f4;
+  padding-top: 20rpx; }
+.psty3{
+  background-color: #fff;
+  padding-left: 40rpx;}
+.psty4{
+  margin-right: 30rpx;
+  text-align: right;
+}

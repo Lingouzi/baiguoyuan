@@ -1,0 +1,17 @@
+<!--pages/myinfo/index.wxml-->
+<view class="psty2">
+  <view class="psty3">
+    <view class="psty1">
+      <text class="col5 fz30">姓名</text><input class="psty4" value="{{name}}" placeholder='姓名'></input>
+    </view>
+    <view class="psty1">
+      <text class="col5 fz30">性别</text><input class="psty4"></input>
+    </view>
+    <view class="psty1">
+      <text class="col5 fz30">生日</text><input class="psty4"></input>
+    </view>
+    <view class="psty1">
+      <text class="col5 fz30">我的会员</text><input class="psty4"></input>
+    </view>
+  </view>
+</view>
