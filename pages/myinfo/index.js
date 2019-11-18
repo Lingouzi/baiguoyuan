@@ -26,6 +26,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.request({
+      url: 'http://yapi.demo.qunar.com/mock/37794/api/address',
+      // header: { 'x-service-id': '1' },
+      success(res) {
+        console.log(res)
+      }
+    })
+    console.log('rrrr')
 
   },
 
