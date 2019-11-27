@@ -27,8 +27,12 @@ Page({
    */
   onShow: function () {
     wx.request({
-      url: 'http://yapi.demo.qunar.com/mock/37794/api/address',
+      url: 'http://yapi.demo.qunar.com/mock/42018/ctproduct',
       // header: { 'x-service-id': '1' },
+      data:{
+        id:0,
+      },
+        // method:"post",
       success(res) {
         console.log(res)
       }
