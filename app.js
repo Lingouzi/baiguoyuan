@@ -1,17 +1,85 @@
 //app.js
+var {config,header}=require("./config.js")
 App({
   onLaunch: function () {
     // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+    wx.setStorageSync("config", config)
+    wx.setStorageSync("header", header)
+    let nowtime=new Date()
+    let token=wx.getStorageSync("token")
+    let createtime=wx.getStorageSync("createtime")
+    if (token && ((nowtime - createtime) > 14 * 24 * 3600 * 100)){
+      wx.request({
+        url: wx.getStorageSync("config").freshen_url,
+        header:wx.getStorageSync("header"),
+        method:"post",
+        data:{
+          token: wx.getStorageSync("token").access_token
+        },
+        success(res){
+          if(res.data.code==200){
+            wx.setStorageSync("token", res.data.data)
+          }else{
+            let message=res.data.message
+            wx.showToast({
+              title: message,
+              icon:"success",
+              duration:"2000"
+            })
+          }
+        },
+        fail(){
+          wx.showToast({
+            title: "重新刷新！",
+            icon: "error",
+            duration: "2000"
+          })
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+        }
+      })
+    }else if(!token){
+      // 登录
+      wx.login({
+        success: res => {
+          // 发送 res.code 到后台换取 openId, sessionKey, unionId  
+          let code=res.code
+          wx.request({
+            url: wx.getStorageSync("config").openid_url,
+            header: wx.getStorageSync("header"),
+            data:{
+              code
+            },
+            success(res){
+              if(res.data.code==200){
+                wx.setStorageSync("session", res.data.data.session)
+                //如果没有token在app中先获取openid,可以在login页面可以是使用
+              }else{
+                let message=res.data.message
+                wx.showToast({
+                  title: message,
+                  icon: "error",
+                  duration: "2000"
+                })
+              }
+
+            },
+            fail(){
+              wx.showToast({
+                title: "重新进入！",
+                icon: "error",
+                duration: "2000"
+              })
+            
+            }          
+          })
+        }
+      })     
+      
+
+    }else{
+      console.log("已经有token了，而且没过期！")
+    }
+
     // 获取用户信息
     wx.getSetting({
       success: res => {

@@ -13,7 +13,7 @@ var config = {
   nearshop_url: host + '/nearshop',//附近门店
   city_url: host + '/city',//选择城市
   proinf_url: host + '/productinfos',//产品详细
-  login_url: host + '/login',//登录
+  // login_url: host + '/login',//登录
   shoplist_url: host + '/shoplist',//提货门店
   set_url: host + '/set',//设置
   remind_url: host + '/remindreg',//签到提醒
@@ -36,7 +36,11 @@ var config = {
   shopcartlist_url: host + '/shopcartlist',//购物车列表
   yxproductlist_url: host + '/yxproductlist',//为你优选
   search_url: host + '/search',//搜索
-  hotsearch_url: host + '/hotsearch' //热门搜索
+  hotsearch_url: host + '/hotsearch' ,//热门搜索
+  freshen_url:"http://api.bzffs.cc/api/auth/refresh",
+  login_url:"http://api.bzffs.cc/api/auth/login",
+  openid_url:"http://api.bzffs.cc/api/wechat/mini_program/openid"
+
 }
-var header = { 'x-service-id': '2' }
+var header = { 'x-service-id': '1' }
 module.exports = { config, header }
