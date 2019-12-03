@@ -8,7 +8,7 @@ App({
     let nowtime=new Date()
     let token=wx.getStorageSync("token")
     let createtime=wx.getStorageSync("createtime")
-    if (token && ((nowtime - createtime) > 14 * 24 * 3600 * 100)){
+    if (token && ((nowtime - createtime) > 14 * 24 * 3600 * 1000)){
       wx.request({
         url: wx.getStorageSync("config").freshen_url,
         header:wx.getStorageSync("header"),
@@ -43,16 +43,22 @@ App({
         success: res => {
           // 发送 res.code 到后台换取 openId, sessionKey, unionId  
           let code=res.code
+          console.log(code)
+          console.log("ss")
           wx.request({
             url: wx.getStorageSync("config").openid_url,
-            header: wx.getStorageSync("header"),
+            header: wx.getStorageSync('header'),
             data:{
-              code
+              code:code
             },
             success(res){
+              console.log(res)
               if(res.data.code==200){
-                wx.setStorageSync("session", res.data.data.session)
+                wx.setStorageSync("session", res.data.data)
+                let createTime = new Date();
+                wx.setStorageSync('createTime', createTime);
                 //如果没有token在app中先获取openid,可以在login页面可以是使用
+                console.log(res.data.data.session)
               }else{
                 let message=res.data.message
                 wx.showToast({

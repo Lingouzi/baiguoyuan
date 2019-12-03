@@ -1,13 +1,32 @@
 {
-  "pages": [
-    "pages/myinfo/index",
-    "pages/login/index",
+  "pages": 
+  [
     "pages/index/index",
-    "pages/pingtuan/index",
-    "pages/dingdan/index",
-    "pages/huiyuan/index"
-
- 
+    "pages/login/index", 
+    "pages/myinfo/index", 
+    "pages/pingtuanlist/index", 
+    "pages/member/index", 
+    "pages/proinfos/index", 
+    "pages/addresslist/index", 
+    "pages/puterror/index",
+    "pages/errorlist/index", 
+    "pages/cart/index", 
+    "pages/membercode/index", 
+    "pages/shopinteg/index", 
+    "pages/checkorder/index", 
+    "pages/yuelist/index", 
+    "pages/customer/index", 
+    "pages/order/index", 
+    "pages/changepass/index", 
+    "pages/peisong/index", 
+    "pages/qiandao/index", 
+    "pages/set/index", 
+    "pages/search/index", 
+    "pages/editaddr/index", 
+    "pages/changeaddr/index", 
+    "pages/changeshop/index", 
+    "pages/coupon/index", 
+    "pages/account/index" 
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -16,32 +35,33 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color": "#82868c",
-    "selectedColor": "#008c3c",
-    "list": [{
-      "pagePath": "pages/myinfo/index",
+    "list": [
+      {
+      "pagePath": "pages/index/index",
       "text": "首页",
       "iconPath": "pages/images/index1.png",
       "selectedIconPath": "pages/images/index.png"
     },
     {
-      "pagePath": "pages/pingtuan/index",
+      "pagePath": "pages/pingtuanlist/index",
       "text": "拼团",
       "iconPath": "pages/images/pingtuan1.png",
       "selectedIconPath": "pages/images/pingtuan.png"
     },
     {
-      "pagePath": "pages/dingdan/index",
+      "pagePath": "pages/order/index",
       "text": "订单",
       "iconPath": "pages/images/dingdan1.png",
       "selectedIconPath": "pages/images/dingdan.png"
     },
     {
-      "pagePath": "pages/login/index",
+      "pagePath": "pages/member/index",
       "text": "会员",
       "iconPath": "pages/images/huiyan1.png",
       "selectedIconPath": "pages/images/huiyan.png"
-    }]
+    }
+    
+    ]
   },
   "sitemapLocation": "sitemap.json"
 }

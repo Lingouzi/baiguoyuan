@@ -37,10 +37,12 @@ var config = {
   yxproductlist_url: host + '/yxproductlist',//为你优选
   search_url: host + '/search',//搜索
   hotsearch_url: host + '/hotsearch' ,//热门搜索
-  freshen_url:"http://api.bzffs.cc/api/auth/refresh",
-  login_url:"http://api.bzffs.cc/api/auth/login",
-  openid_url:"http://api.bzffs.cc/api/wechat/mini_program/openid"
+  userinfo_url: host + '/userinfo',//个人信息
+  changeinfo_url: host + '/changeuserinfo',//修改信息
+  freshen_url: "http://api.bzffs.cc/api/auth/refresh",//刷新token
+  login_url:"http://api.bzffs.cc/api/auth/login",//登录，返回token
+  openid_url:"http://api.bzffs.cc/api/wechat/mini_program/openid"//获取openid
 
 }
 var header = { 'x-service-id': '1' }
-module.exports = { config, header }
+module.exports = {config, header }

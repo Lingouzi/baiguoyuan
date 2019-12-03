@@ -1,7 +1,7 @@
 /* pages/myinfo/index.wxss */
 .psty1{
   border-bottom: 1rpx solid #f4f4f4;
-  padding: 0 0 0 40rpx;
+  padding: 0 0 0 10rpx;
   color: #000;
   font-size: 30rpx;
   display: flex;
@@ -23,5 +23,11 @@
 .psty5{
   padding-top: 30rpx;
   padding-bottom: 30rpx;
-
 }
+.psty6{
+  font-size: 35rpx;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  line-height: 3;}
+  .iconfont{padding-left: 20rpx;}

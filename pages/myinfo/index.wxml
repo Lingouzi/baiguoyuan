@@ -2,16 +2,27 @@
 <view class="psty2">
   <view class="psty3">
     <view class="psty1">
-      <text class="psty5">姓名</text><text class="psty5 psty4">sss</text>
+      <text class="psty5">姓名</text><text class="psty5 psty4">{{name}}<text class="iconfont icon-iconfontzhizuobiaozhun19"></text></text>    
     </view>
     <view class="psty1">
-      <text class="psty5">性别</text><picker></picker>
+      <text class="psty5">性别</text>
+      <view class="psty5 psty4">
+        <picker value="{{sexindex}}" range="{{sex}}" bindchange="changesex">
+          {{sex[sexindex]}}<text class="iconfont icon-iconfontzhizuobiaozhun19"></text>
+        </picker>
+      </view>
     </view>
     <view class="psty1">
-      <text class="psty5">生日</text><picker mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">{{date}}s</picker>
+      <text class="psty5">生日</text>
+      <view class="psty5 psty4">
+        <picker mode="date" value="{{birthday}}" end="2022-01-01" start="1920-01-01" bindchange="changedate">
+          {{birthday}}<text class="iconfont icon-iconfontzhizuobiaozhun19"></text>
+        </picker>
+      </view>
     </view>
     <view class="psty1">
-      <text class="psty5">我的会员</text><input class="psty4"></input>
+      <text class="psty5">我的会员</text><view class="psty5 psty4">{{user}}<text class="iconfont icon-iconfontzhizuobiaozhun19"></text></view> 
     </view>
   </view>
+  <view class="btn1 psty6" bindtap="putmyinfo">确定</view>
 </view>
