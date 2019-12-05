@@ -2,15 +2,18 @@
 <view>
   <view class="psty1">
     <view>
-      <text></text>
-      <text>{{}}</text>
-      <text></text>
+      <view class="fz30">
+        <text class="iconfont icon-tubiaozhizuomoban"></text><text class="text1">{{address}}</text>
+        <text class="icon1 iconimg1"></text>
+      </view>
+      <view></view>
+      <view></view>
     </view>
     <view>
       <text></text>
       <text></text>
     </view>
   </view>
-  <view class="psty1"></view>
+
 
 </view>

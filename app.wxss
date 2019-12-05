@@ -8,7 +8,7 @@
 }
 .iconfont {
   font-family: "iconfont" !important;
-  font-size: 16px;
+  font-size: inherit;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -199,4 +199,12 @@
   color: #fff;
   background-color: #008c3c;
   text-align: center;
+  }
+  .traY9{
+	-moz-transform: rotate(90deg);
+	-webkit-transform: rotate(90deg);  
+  }
+  .iconimg1{
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiPjxwYXRoIGQ9Ik03OTMuMiAzMjBsMzguOCA0MS40TDUxMiA3MDQgMTkyIDM2MS40bDM4LjYtNDEuNEw1MTIgNjIxeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==);
+    background-size: 100%;
   }

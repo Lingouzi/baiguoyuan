@@ -1,21 +1,20 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.psty1{
+  background-color: #008c3c;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  padding: 30rpx 25rpx 15rpx;
+  box-sizing: border-box;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.icon1{
+  width: 35rpx;
+  height: 30rpx;
+  display: inline-block;
+  vertical-align: middle;
 }
+.text1{
+  padding-left: 20rpx;
+  padding-right: 15rpx;
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
 }

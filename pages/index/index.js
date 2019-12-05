@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    address:"厦门市软件园二期"
   },
   //事件处理函数
 
@@ -19,20 +20,18 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    const that = this
+    const that=this
     wx.getLocation({
-      type: 'gcj02',
-      success: function (res) {
+      type:'gcj02',
+      success: function(res) {
         that.setData({
           myLatitude: res.latitude,
           myLongitude: res.longitude
-        });
-        console.log(res)
+        })
       }
     })
 
   },
-
   /**
    * 生命周期函数--监听页面显示
    */
