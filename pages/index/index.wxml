@@ -20,11 +20,20 @@
   </view>
   <view class="psty4">
     <view>
-      <text class="iconfont icon-tubiaozhizuomoban"></text>
-      <view class="fz25">会员码</view>
+      <text class="iconfont icon-zhifu icon3"></text>
+      <view class="fz25 text5">会员码</view>
       <view class="fz20">快速识别会员</view>
     </view>
-  
+    <view>
+      <text class="iconfont icon-coupon icon3"></text>
+      <view class="fz25 text5">优惠券</view>
+      <view class="fz20">***</view>
+    </view>
+    <view>
+      <text class="iconfont icon-qianbao icon3"></text>
+      <view class="fz25 text5">钱包.充值</view>
+      <view class="fz20">***</view>
+    </view>
   </view>
 
 
