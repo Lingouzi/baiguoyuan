@@ -1,19 +1,37 @@
 <!--index.wxml-->
 <view>
   <view class="psty1">
-    <view>
+    <view class="disflex">
       <view class="fz30">
         <text class="iconfont icon-tubiaozhizuomoban"></text><text class="text1">{{address}}</text>
         <text class="icon1 iconimg1"></text>
       </view>
-      <view></view>
-      <view></view>
+      <view class="psty2">
+        <text class="text2"></text>
+        <text class="text3 iconfont icon-sousuo"></text>
+      </view>
     </view>
-    <view>
-      <text></text>
-      <text></text>
+    <view class="psty3 fz25">
+      由
+      <text class="text4">{{shopname}}</text>
+      送出
+      <text class="icon2 iconimg1"></text>
     </view>
   </view>
+  <view class="psty4">
+    <view>
+      <text class="iconfont icon-tubiaozhizuomoban"></text>
+      <view class="fz25">会员码</view>
+      <view class="fz20">快速识别会员</view>
+    </view>
+  
+  </view>
+
+
+
+
+
+
 
 
 </view>

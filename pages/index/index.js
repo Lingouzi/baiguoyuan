@@ -1,10 +1,17 @@
 //index.js
 //获取应用实例
 const app = getApp()
+var QQMapWX = require('../libs/qqmap-wx-jssdk.js');
+
+// 实例化API核心类
+var qqmapsdk = new QQMapWX({
+  key: 'YGSBZ-QANC4-M2YUA-X2HI3-5AT6Q-JEBIJ' // 必填
+});
 
 Page({
   data: {
-    address:"厦门市软件园二期"
+    address:"厦门市软件园二期",
+    shopname:"万达店"
   },
   //事件处理函数
 
@@ -28,6 +35,7 @@ Page({
           myLatitude: res.latitude,
           myLongitude: res.longitude
         })
+        console.log(res)
       }
     })
 
