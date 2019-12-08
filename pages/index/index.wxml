@@ -27,14 +27,48 @@
     <view>
       <text class="iconfont icon-coupon icon3"></text>
       <view class="fz25 text5">优惠券</view>
-      <view class="fz20">***</view>
+      <view class="fz20">{{coupon}}</view>
     </view>
     <view>
       <text class="iconfont icon-qianbao icon3"></text>
       <view class="fz25 text5">钱包.充值</view>
-      <view class="fz20">***</view>
+      <view class="fz20">{{money}}</view>
     </view>
   </view>
+    <view>
+          <swiper indicator-dots="{{indicatorDots}}" 
+          autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="banner" style="height:{{Height}}">
+            <block wx:for="{{bannerUrls}}" wx:key="*this">
+              <navigator url="{{item.linkUrl}}">
+              <swiper-item>
+                <image src="{{ item.url }}" class="banneritem" bindload='imgHeight' mode='scaleToFill'></image>
+              </swiper-item>
+              </navigator>
+            </block>
+          </swiper>
+    </view>
+      <view class="hotsale">
+       <view class="hottitle">好吃推荐</view>
+        <scroll-view scroll-x="true" class="hotlist">
+          <view class="hotproduct" wx:for="{{hotpro}}" wx:key="{{index}}" data-id="item.id">
+            <image src="../images/product.png" class="proimg"></image>
+            <view class="hot-name">{{item.name}}</view>
+            <view class="hot-desc1">{{item.descr1}}</view>
+            <view  class="hot-desc2">{{item.descr2}}</view>
+            <view class="hot-fet"><text class="fz15">¥</text>{{item.fteprice}}</view>
+            <view class="hot-member" wx:if="{{!item.fteprice}}"><text class="fz15">¥</text>{{item.memprice}}</view>
+            <view class="hot-price"><text class="fz15">¥</text>{{item.price}}</view>
+            <view class="cart"></view>
+          
+          </view>
+        
+        
+        </scroll-view>
+       
+ 
+      
+      </view>
+
 
 
 

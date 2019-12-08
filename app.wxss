@@ -259,6 +259,7 @@
 .col4{color: #fff;}
 .col5{color: #000;}
 .fz20{font-size: 20rpx;}
+.fz15{font-size: 15rpx;}
 .fz30{font-size: 30rpx;}
 .fz25{font-size: 25rpx;}
 .fz40{font-size: 40rpx;}

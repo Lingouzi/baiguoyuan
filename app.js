@@ -8,7 +8,7 @@ App({
     let nowtime=new Date()
     let token=wx.getStorageSync("token")
     let createtime=wx.getStorageSync("createtime")
-    if (token && ((nowtime - createtime) > 14 * 24 * 3600 * 1000)){
+    if (token && ((nowtime - createtime) < 14 * 24 * 3600 * 1000)){
       wx.request({
         url: wx.getStorageSync("config").freshen_url,
         header:wx.getStorageSync("header"),
