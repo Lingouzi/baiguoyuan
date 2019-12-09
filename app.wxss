@@ -299,7 +299,8 @@
     color: #fff;
     line-height: 50rpx;
     text-align: center;
-    bottom: 30rpx;
+    bottom: 10rpx;
     right: 60rpx;  
   }
+  .rel{position: relative;}
 

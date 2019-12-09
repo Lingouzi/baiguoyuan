@@ -45,7 +45,6 @@ gethotlist(){
       shopname: that.data.shopname
     },
     success(res){
-      console.log(res)
       if(res.data.code=200){
         let hospro = res.data.data.list
         hospro.forEach(item=>{
@@ -70,12 +69,44 @@ gethotlist(){
     fail(){}
   })
 },
+  getgoodlist() {
+    const that = this
+    wx.request({
+      url: wx.getStorageSync('config').yxproductlist_url,
+      data: {
+        shopname: that.data.shopname
+      },
+      success(res) {
+        console.log(res)
+        if (res.data.code = 200) {
+          let goodpro = res.data.data
+          goodpro.forEach(item => {
+            if (item.name.length > 16) {
+              item.name = item.name.substring(0, 18) + '...'
+            }
+          })
+          that.setData({
+            goodpro: goodpro
+          })
+        } else {
+          let mess = res.data.message
+          wx.showToast({
+            title: mess,
+            icon: 'error',
+            duration: 2000
+          })
+        }
 
+      },
+      fail() { }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.gethotlist()
+    this.getgoodlist()
 
   },
 

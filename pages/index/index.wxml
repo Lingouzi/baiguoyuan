@@ -50,25 +50,42 @@
       <view class="hotsale">
        <view class="hottitle">好吃推荐</view>
         <scroll-view scroll-x="true" class="hotlist">
-          <view class="hotproduct" wx:for="{{hotpro}}" wx:key="{{index}}" data-id="item.id">
+          <block wx:for="{{hotpro}}" wx:key="{{index}}" >
+          <view class="hotproduct" data-id="item.id" bindtap="goproduct">
             <image src="../images/product.png" class="proimg"></image>
             <view class="hot-name">{{item.name}}</view>
             <view class="hot-desc1">{{item.descr1}}</view>
             <view  class="hot-desc2">{{item.descr2}}<text class="icon-icon-test1 iconfont icon4"></text></view>
-            <view class="hot-fet"><text class="fz15">¥</text>{{item.fteprice}}</view>
-            <view class="hot-member" wx:if="{{!item.fteprice}}"><text class="fz15">¥</text>{{item.memprice}}</view>
-            <view class="hot-price"><text class="fz15">¥</text>{{item.price}}</view>
-            <view class="cart"><text class="icon-gouwuche iconfont icon5"></text></view>
-          </view>
+            <view class="rel">
+              <view class="hot-fet"><text class="fz15">¥</text>{{item.fteprice}}</view>
+              <view class="hot-member" wx:if="{{!item.fteprice}}"><text class="fz15">¥</text>{{item.memprice}}</view>
+              <view class="hot-price"><text class="fz15">¥</text>{{item.price}}</view>
+              <view class="cart"><text class="icon-gouwuche iconfont icon5"></text></view>
+            </view>
+            </view>
+          </block>
         </scroll-view>
       </view>
       <view class="goodsale">
         <view class="goodtitle">好吃推荐</view>
-        <block wx:for="{{}}">
-          <view class="goodroduct">
-          </view>
+        <view class="goodlist">
+        <block wx:for="{{goodpro}}" >
+          <view class="goodproduct" data-id="item.id" bindtap="goproduct">
+            <image src="../images/product.png" class="goodimg"></image>
+            <view class="good-name">{{item.name}}</view>
+            <view class="good-desc1">{{item.descr2}} {{item.descr3}}</view>
+            <view  class="hot-desc2">{{item.descr1}}</view>
+            <view class="good-fet"><text class="fz15">¥</text>{{item.fteprice}}</view>
+            <view class="rel">
+              <view class="good-member" wx:if="{{!item.fteprice}}"><text class="fz15">¥</text>{{item.memprice}}</view>
+              <view class="good-price"><text class="fz15">¥</text>{{item.price}}</view>
+              <view class="cart"><text class="icon-gouwuche iconfont icon5"></text></view>
+              </view>
+                          <view>{{item.descr4}}</view>  
+            </view>
+
         </block>
-      
+      </view>
       
       </view>
 
