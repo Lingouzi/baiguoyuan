@@ -1,9 +1,13 @@
 /**index.wxss**/
+page{
+  background-color: #eee;
+}
 .psty1{
   background-color: #008c3c;
   color: #fff;
   position: fixed;
   width: 100%;
+  top: 0rpx;
   padding: 20rpx 25rpx 15rpx;
   box-sizing: border-box;
 }
@@ -47,4 +51,87 @@
   padding: 10rpx 20rpx;
   border-radius: 25rpx;
 }
-.psty4{}
+.psty4{
+   background-color: #008c3c;
+   margin-top: 140rpx;
+   border-top: 1rpx solid #008c3c;
+   padding-top: 20rpx;
+   padding-bottom: 40rpx;
+   color: #fff;
+   display: flex;
+   justify-content:space-evenly;
+   text-align: center;
+}
+.text5{
+padding-top: 20rpx;
+padding-bottom: 10rpx;
+}
+.icon3{
+  font-size: 50rpx;
+}
+.banner{
+  padding: 25rpx;
+  background-color: #fff;
+}
+.hottitle{
+   font-size: 30rpx;
+  font-weight: 300;
+  padding: 25rpx 25rpx 25rpx 10rpx;
+}
+.banneritem{
+  width: 100%;
+  height: calc(100vw * 0.3129);
+}
+.hotlist{
+  white-space: nowrap;
+  display: flex;
+  background-color: #fff;
+  padding-top: 20rpx;  
+}
+.hotsale{
+  margin-left: 25rpx;
+  margin-right: 25rpx;
+}
+.hotproduct{
+  display: inline-block;
+  width: 250rpx;
+  margin-left: 20rpx;
+  align-items: center;
+  font-size: 20rpx;
+  padding-bottom: 20rpx;
+  position: relative;
+}
+.proimg{
+  width: 210rpx;
+  height: 210rpx;
+  border-radius: 50%;
+}
+.hot-name{
+  font-size: 20rpx;
+  color: #111;
+  white-space:pre-wrap;
+
+}
+.hot-desc1{
+  font-size: 20rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.hot-desc2{
+  font-size: 15rpx;
+  background-color: #fff5f6;
+  display: inline-block;
+  color: #ff7387;
+  border-radius: 5rpx;
+  padding: 8rpx 10rpx;
+  margin-top: 15rpx;
+  margin-bottom: 15rpx;
+}
+.hot-price{
+  margin-top: 10rpx;
+  color: #ff7387;
+}
+.icon4{
+  font-size: 15rpx;
+  padding-left: 8rpx;
+  }
