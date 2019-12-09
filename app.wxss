@@ -186,6 +186,7 @@
 .col4{color: #fff;}
 .col5{color: #000;}
 .fz20{font-size: 20rpx;}
+.fz25{font-size: 25rpx;}
 .fz30{font-size: 30rpx;}
 .fz40{font-size: 40rpx;}
 .mlr50{
@@ -207,4 +208,8 @@
   .iconimg1{
     background-image: url(data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiPjxwYXRoIGQ9Ik03OTMuMiAzMjBsMzguOCA0MS40TDUxMiA3MDQgMTkyIDM2MS40bDM4LjYtNDEuNEw1MTIgNjIxeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==);
     background-size: 100%;
+  }
+  .disflex{
+    display: flex;
+    justify-content:space-between;
   }
