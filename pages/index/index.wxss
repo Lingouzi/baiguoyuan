@@ -73,7 +73,7 @@ padding-bottom: 10rpx;
   padding: 25rpx;
   background-color: #fff;
 }
-.hottitle{
+.hottitle,.goodtitle{
    font-size: 30rpx;
   font-weight: 300;
   padding: 25rpx 25rpx 25rpx 10rpx;
@@ -88,7 +88,7 @@ padding-bottom: 10rpx;
   background-color: #fff;
   padding-top: 20rpx;  
 }
-.hotsale{
+.hotsale,.goodsale{
   margin-left: 25rpx;
   margin-right: 25rpx;
 }

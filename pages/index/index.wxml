@@ -63,10 +63,11 @@
         </scroll-view>
       </view>
       <view class="goodsale">
-        <view class="hottitle">好吃推荐</view>
-        <view>
-        
-        </view>
+        <view class="goodtitle">好吃推荐</view>
+        <block wx:for="{{}}">
+          <view class="goodroduct">
+          </view>
+        </block>
       
       
       </view>
