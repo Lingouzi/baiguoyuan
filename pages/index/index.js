@@ -20,6 +20,10 @@ Page({
     autoplay: true,
     interval: 2500,
     duration: 500,
+    title1:"店长点赞",
+    goodpro:{},
+    page:1,
+    limit:10,
     bannerUrls: [
       {
         url: '../images/banner1.png',
@@ -35,6 +39,21 @@ Page({
       }
       ]
 
+  },
+gosearch(){
+  wx.navigateTo({
+    url: "/pages/search/index"
+  })
+},
+gonearshop(){
+    wx.navigateTo({
+      url: "/pages/changeshop/index?myLatitude=" + this.data.myLatitude + "&myLongitude=" + this.data.myLongitude
+    })
+  },
+gopeisong(){
+    wx.navigateTo({
+      url: "/pages/peisong/index"
+    })
   },
   //事件处理函数
 gethotlist(){
@@ -74,10 +93,12 @@ gethotlist(){
     wx.request({
       url: wx.getStorageSync('config').yxproductlist_url,
       data: {
+        shopname: that.data.shopname,
+        page: that.data.page,
+        limit: that.data.limit,
         shopname: that.data.shopname
       },
       success(res) {
-        console.log(res)
         if (res.data.code = 200) {
           let goodpro = res.data.data
           goodpro.forEach(item => {
@@ -86,7 +107,8 @@ gethotlist(){
             }
           })
           that.setData({
-            goodpro: goodpro
+            goodpro: [...that.data.goodpro, ...goodpro],
+            total:res.data.total
           })
         } else {
           let mess = res.data.message
@@ -107,7 +129,6 @@ gethotlist(){
   onLoad: function (options) {
     this.gethotlist()
     this.getgoodlist()
-
   },
 
   imgHeight: function (e) {
@@ -192,11 +213,6 @@ gethotlist(){
   onShow: function () {
 
   },
-  // getproductlist(){
-  //   wx.request({
-  //     url: '',
-  //   })
-  // },
 
   /**
    * 生命周期函数--监听页面隐藏
@@ -217,12 +233,26 @@ gethotlist(){
    */
   onPullDownRefresh: function () {
 
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
+    const that = this
+    if (that.data.goodpro.length == that.data.total) {
+      wx.showToast({
+        title: '没有更多',
+        icon: 'success',
+        duration: 2000
+      })
+    } else {
+      this.setData({
+        page: this.data.page + 1
+      })
+      this.getgoodlist()
+    }
 
   }
 })

@@ -7,18 +7,18 @@
         <text class="icon1 iconimg1"></text>
       </view>
       <view class="psty2">
-        <text class="text2"></text>
-        <text class="text3 iconfont icon-sousuo"></text>
+        <text class="text2" bindtap="gopeisong"></text>
+        <text class="text3 iconfont icon-sousuo" bindtap="gosearch"></text>
       </view>
     </view>
-    <view class="psty3 fz25">
+    <view class="psty3 fz25" bindtap="gonearshop">
       由
       <text class="text4">{{shopname}}</text>
       送出
       <text class="icon2 iconimg1"></text>
     </view>
   </view>
-  <view class="psty4">
+  <!-- <view class="psty4">
     <view>
       <text class="iconfont icon-zhifu icon3"></text>
       <view class="fz25 text5">会员码</view>
@@ -51,15 +51,15 @@
        <view class="hottitle">好吃推荐</view>
         <scroll-view scroll-x="true" class="hotlist">
           <block wx:for="{{hotpro}}" wx:key="{{index}}" >
-          <view class="hotproduct" data-id="item.id" bindtap="goproduct">
+          <view class="hotproduct" data-id="{{item.id}}" bindtap="goproduct">
             <image src="../images/product.png" class="proimg"></image>
             <view class="hot-name">{{item.name}}</view>
             <view class="hot-desc1">{{item.descr1}}</view>
-            <view  class="hot-desc2">{{item.descr2}}<text class="icon-icon-test1 iconfont icon4"></text></view>
+               <view  class="hot-desc2">{{item.descr2}}<text class="iconfont icon4 {{item.descr2==title1 ? ' icon-icon-test1' : ' icon-dianzan'}}"></text></view>
             <view class="rel">
-              <view class="hot-fet"><text class="fz15">¥</text>{{item.fteprice}}</view>
+              <view class="hot-fet {{item.descr2==title1 ? 'col6':''}}"><text class="fz15">¥</text>{{item.fteprice}}<text wx:if="{{item.descr2==title1}}" class="prtitle vm5">心享价</text></view>
               <view class="hot-member" wx:if="{{!item.fteprice}}"><text class="fz15">¥</text>{{item.memprice}}</view>
-              <view class="hot-price"><text class="fz15">¥</text>{{item.price}}</view>
+              <view class="hot-price {{item.descr2==title1 ? ' lineth' : ''}}"><text class="fz15">¥</text>{{item.price}}</view>
               <view class="cart"><text class="icon-gouwuche iconfont icon5"></text></view>
             </view>
             </view>
@@ -67,21 +67,22 @@
         </scroll-view>
       </view>
       <view class="goodsale">
-        <view class="goodtitle">好吃推荐</view>
+        <view class="goodtitle">为你优选 <view class="more" bindtap="gopeisong">查看全部</view></view>
         <view class="goodlist">
         <block wx:for="{{goodpro}}" >
-          <view class="goodproduct" data-id="item.id" bindtap="goproduct">
+          <view class="goodproduct" data-id="{{item.id}}" bindtap="goproduct">
             <image src="../images/product.png" class="goodimg"></image>
             <view class="good-name">{{item.name}}</view>
-            <view class="good-desc1">{{item.descr2}} {{item.descr3}}</view>
-            <view  class="hot-desc2">{{item.descr1}}</view>
-            <view class="good-fet"><text class="fz15">¥</text>{{item.fteprice}}</view>
+            <view class="good-desc1">{{item.descr2}} <text class="col7">{{item.descr3}}</text></view>
+               <view  class="good-desc2">{{item.descr4}}<text class="col7" wx:if="{{item.num <10 }}"> 还剩{{item.num}}个</text></view>
             <view class="rel">
+              <view class="good-fet {{item.descr2==title1 ? 'col6':''}}"><text class="fz15">¥</text>{{item.fteprice}}<text wx:if="{{item.fteprice}}" class="prtitle vm5">心享价</text></view>
               <view class="good-member" wx:if="{{!item.fteprice}}"><text class="fz15">¥</text>{{item.memprice}}</view>
-              <view class="good-price"><text class="fz15">¥</text>{{item.price}}</view>
+              <view class="good-price {{item.descr2==title1 ? ' lineth' : ''}}"><text class="fz15">¥</text>{{item.price}}</view>
               <view class="cart"><text class="icon-gouwuche iconfont icon5"></text></view>
-              </view>
-                          <view>{{item.descr4}}</view>  
+            </view>
+              <view wx:if="{{item.descr1}}"><text class="box1 good-dec">{{item.descr1}}</text></view>  
+              <view wx:if="{{item.inte}}"><text class="box2 good-dec">积分{{item.inte}}</text></view> 
             </view>
 
         </block>
@@ -97,4 +98,10 @@
 
 
 
+
+
+
+
+
+ -->
 </view>

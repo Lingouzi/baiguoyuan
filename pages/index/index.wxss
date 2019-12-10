@@ -34,8 +34,7 @@ page{
   height: 40rpx;
   display: inline-block;
   padding-left: 10rpx;
-  padding-right: 10rpx;
-  
+  padding-right: 10rpx; 
 }
 .text3{
   vertical-align: 10rpx;
@@ -76,7 +75,7 @@ padding-bottom: 10rpx;
 }
 .hottitle,.goodtitle{
    font-size: 32rpx;
-  font-weight: bold;
+  font-weight:600;
   padding: 25rpx 25rpx 25rpx 10rpx;
 }
 .banneritem{
@@ -124,9 +123,14 @@ padding-bottom: 10rpx;
   font-size: 28rpx;
 }
 .hot-desc1,.good-desc1,.good-desc2{
-  font-size: 25rpx;
-  color: #666;
+  font-size: 18rpx;
+  color: #989898;
   margin-top: 10rpx;
+}
+.good-desc2,.good-desc1{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .hot-desc2{
   font-size: 20rpx;
@@ -139,12 +143,13 @@ padding-bottom: 10rpx;
   margin-bottom: 15rpx;
 }
 .good-fet,.hot-fet{
-  color: #ff7387;
-  font-size: 20rpx;
+  font-size: 28rpx;
+  font-weight:500;
 }
+.good-fet{color: #ff7387;}
 .good-price,.hot-price{
-  margin-top: 10rpx;
-  font-size: 20rpx;
+  margin-top: 5rpx;
+  font-size: 18rpx;
 }
 .icon4{
   font-size: 20rpx;
@@ -157,8 +162,8 @@ padding-bottom: 10rpx;
 
   }
 .goodproduct{
-  width: 310rpx;
-  height: 600rpx;
+  width: 315rpx;
+  height: 590rpx;
   background-color: #fff;
   padding: 20rpx 15rpx;
   align-items: center;
@@ -166,4 +171,21 @@ padding-bottom: 10rpx;
   border-radius: 5rpx;
   margin-bottom: 15rpx;
 }
-
+.icon5{
+  font-size: 30rpx;
+}
+.good-dec{
+  font-size: 16rpx;
+  padding: 5rpx 8rpx;
+  border-radius: 5rpx;
+  display: inline-block;
+  margin-top: 8rpx;
+}
+.more{
+  float: right;
+  font-size: 25rpx;
+  font-weight: normal;
+  padding: 4rpx 8rpx;
+  vertical-align: middle;
+  display: inline-block;
+}
