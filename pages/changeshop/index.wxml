@@ -1,2 +1,19 @@
 <!--pages/changeshop/index.wxml-->
-<text>pages/changeshop/index.wxml</text>
+<view>
+  <block wx:for="{{nearshop}}" wx:key="{{index}}">
+    <view class="list {{num==index ? 'active':''}}" bindtap="changshop" data-name="{{item.shopname}}" wx:key="{{index}}">
+      <view class="title">{{item.shopname}}</view>
+      <view class="listcont">
+        <view class="">
+          <view class="psty2">{{item.address}}</view>
+          <view class="psty3">营业时间：{{item.time}}</view>
+        </view>
+        <view class="psty4">
+          <view><text class="iconfont icon-tubiaozhizuomoban col2"></text>{{item.distance}}KM</view>
+          <view class="psty5"><text class="iconfont icon-dingdan vam col2"></text>门店资质</view>
+        </view>
+      </view>
+    </view>
+   
+  </block>
+</view>

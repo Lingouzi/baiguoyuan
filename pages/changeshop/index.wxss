@@ -1,1 +1,44 @@
 /* pages/changeshop/index.wxss */
+.list{
+  border-bottom: 1rpx solid #ddd;
+  padding: 25rpx;
+  color: #111;
+}
+.active{
+  position: relative;
+}
+.active::before{
+  position: absolute;
+  width: 35rpx;
+  height: 35rpx;
+  top:0;
+  left: 0;
+  content: '/U+2713';
+ background-image: linear-gradient(135deg, red 50%, transparent 50%,transparent);
+}
+.title{
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.listcont{
+  display: flex;
+  justify-content: space-between;
+  align-items:flex-start;
+}
+.psty2{
+  font-size: 25rpx;
+  margin-top: 15rpx;
+  margin-bottom: 20rpx;
+}
+.psty3{
+  color: #ddd;
+  font-size: 20rpx;
+}
+.psty4{
+  font-size: 20rpx;
+  text-align: left;
+}
+.psty5{
+  margin-top: 20rpx;
+}
+.vam{  vertical-align: middle;}
