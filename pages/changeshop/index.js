@@ -1,3 +1,4 @@
+
 // pages/changeshop/index.js
 Page({
 
@@ -5,53 +6,65 @@ Page({
    * 页面的初始数据
    */
   data: {
-    num:0
-
+    num: 0
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  changshop(e){
-    console.log(e.currentTarget.dataset.name)
-    wx.request({
-      url: '',
+  changshop(e) {
+    let name = e.currentTarget.dataset.name
+    let num = e.currentTarget.dataset.id
+    console.log(num)
+    this.setData({
+      num: num
     })
-
+    setTimeout(function () {
+      console.log(name)
+      wx.switchTab({
+        url: '/pages/index/index?shopname=' + name
+      })
+    }, 1500)
+  },
+  compare(item1,item2){
+    return item1.distance - item2.distance
   },
   onLoad: function (options) {
-    // wx.showToast({
-    //   title: '加载中',
-    //   icon:'loadding',
-    //   duration:90000
-    // })
+    let name = options.shopname
     const that = this
-    console.log(options.myLatitude + options.myLongitude)
     that.setData({
-      myLatitude:options.myLatitude,
-      myLongitude:options.myLongitude
+      myLatitude: options.myLatitude,
+      myLongitude: options.myLongitude
     })
     wx.request({
       url: wx.getStorageSync('config').nearshop_url,
-      header:wx.getStorageSync('header'),
-      success(res){
-        console.log(res)
-        if(res.data.code==200){
+      header: wx.getStorageSync('header'),
+      success(res) {
+         wx.hideToast()
+        if (res.data.code == 200) {
           let shop = res.data.data.shoplist
-          let nearshop=[]
-          shop.forEach(item=>{
-          let s=that.distance(that.data.myLatitude, that.data.myLongitude, item.latitude, item.longitude) 
-          if(s<15){
-            item.distance=s
-            nearshop.push(item)
-          }
+          let nearshop = [],shoplist=[]
+          shop.forEach(item => {
+            let s = that.distance(that.data.myLatitude, that.data.myLongitude, item.latitude, item.longitude)
+            if (s < 10) {
+              item.distance = s
+              shoplist.push(item)
+            }
           })
+          nearshop = shoplist.sort(that.compare)
           that.setData({
             nearshop: nearshop
           })
-          // wx.hideToast()
-        }else{
-          let mess=res.data.message
+          nearshop.forEach((item, index) => {
+            if (item.shopname == name) {
+              that.setData({
+                num: index
+              })
+            }
+          })
+    
+        } else {
+          let mess = res.data.message
           wx.showToast({
             title: mess,
             icon: 'success',
@@ -59,11 +72,11 @@ Page({
           })
         }
       },
-      fail(){
+      fail() {
         wx.showToast({
           title: '返回上级，重新进入！',
-          icon:'success',
-          duration:2000
+          icon: 'success',
+          duration: 2000
         })
       }
     })
@@ -91,6 +104,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    wx.showToast({
+      title: '加载中',
+      icon: 'loadding',
+      duration: 3000
+    })
 
   },
 

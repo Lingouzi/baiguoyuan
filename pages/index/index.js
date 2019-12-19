@@ -11,7 +11,7 @@ var qqmapsdk = new QQMapWX({
 Page({
   data: {
     address:"厦门市软件园二期",
-    shopname:"万达店",
+    shopname:"瑞景店",
     money:"***",
     coupon: "***",
     background: ['demo-text-1', 'demo-text-2', 'demo-text-3'],
@@ -47,7 +47,7 @@ gosearch(){
 },
 gonearshop(){
     wx.navigateTo({
-      url: "/pages/changeshop/index?myLatitude=" + this.data.myLatitude + "&myLongitude=" + this.data.myLongitude
+      url: "/pages/changeshop/index?myLatitude=" + this.data.myLatitude + "&myLongitude=" + this.data.myLongitude + "&shopname=" + this.data.shopname
     })
   },
 gopeisong(){
@@ -74,7 +74,6 @@ gethotlist(){
         that.setData({
           hotpro:hospro
         })
-        console.log(res.data.list)
       }else{
         let mess = res.data.message
         wx.showToast({
@@ -127,6 +126,9 @@ gethotlist(){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // this.setData({
+    //   shopname: options.shopname
+    // })
     this.gethotlist()
     this.getgoodlist()
   },

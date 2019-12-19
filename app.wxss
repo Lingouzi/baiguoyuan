@@ -263,10 +263,10 @@
 .col5{color: #000;}
 .col6{color: #ff7387;}
 .col7{color: #f54b3e;}
-.fz20{font-size: 20rpx;}
-.fz25{font-size: 25rpx;}
+.fz24{font-size: 24rpx;}
+.fz28{font-size: 28rpx;}
 .fz15{font-size: 15rpx;}
-.fz30{font-size: 30rpx;}
+.fz32{font-size: 32rpx;}
 .fz25{font-size: 25rpx;}
 .fz40{font-size: 40rpx;}
 .mlr50{
@@ -341,6 +341,7 @@
 .box2{
   border: 1px solid currentColor;
   color: #ff7387;
-
 }
-
+.bg1{
+  background-color: #f6f6f6;
+}

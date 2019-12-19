@@ -1,24 +1,40 @@
 /* pages/changeshop/index.wxss */
+page{
+  background-color: #f6f6f6;
+}
 .list{
-  border-bottom: 1rpx solid #ddd;
+  border-top: 1rpx solid #eee;
   padding: 25rpx;
-  color: #111;
+  color: #333;
+  background-color: #fff;
 }
 .active{
   position: relative;
 }
 .active::before{
   position: absolute;
-  width: 35rpx;
-  height: 35rpx;
+  width: 0rpx;
+  height: 0rpx;
   top:0;
   left: 0;
-  content: '/U+2713';
- background-image: linear-gradient(135deg, red 50%, transparent 50%,transparent);
+  content: '';
+  border: 20rpx solid transparent;
+  border-top-color: #fda640;
+  border-left-color: #fda640;
+}
+.active::after{
+  position: absolute;
+  width: 25rpx;
+  height: 25rpx;
+  top:0;
+  left: 0;
+  content: '';
+  background: url('data:image/svg+xml;base64,PHN2ZyBjbGFzcz0iaWNvbiIgdmlld0JveD0iMCAwIDEwMjQgMTAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iNjQiIGhlaWdodD0iNjQiPjxwYXRoIGQ9Ik05NDAuOCAyMTcuNmMtMTIuOC0xMi44LTMyLTEyLjgtNDQuOCAwTDM3Ny42IDczOS4yIDEyOCA0ODkuNmMtMTIuOC0xMi44LTMyLTEyLjgtNDQuOCAwLTEyLjggMTIuOC0xMi44IDMyIDAgNDQuOGwyNzIgMjcyYzEyLjggMTIuOCAzMiAxMi44IDQ0LjggMGw1NDQtNTQ0YzkuNi0xMi44IDkuNi0zMi0zLjItNDQuOHoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=') no-repeat;
+  background-size: 25rpx;
 }
 .title{
-  font-size: 30rpx;
-  font-weight: bold;
+  font-size: 32rpx;
+  font-weight: 300;
 }
 .listcont{
   display: flex;
@@ -26,19 +42,20 @@
   align-items:flex-start;
 }
 .psty2{
-  font-size: 25rpx;
-  margin-top: 15rpx;
-  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  margin-top: 13rpx;
+  margin-bottom: 15rpx;
 }
 .psty3{
-  color: #ddd;
-  font-size: 20rpx;
+  color: #999;
+  font-size: 24rpx;
 }
 .psty4{
-  font-size: 20rpx;
+  font-size: 24rpx;
+  color: #333;
   text-align: left;
 }
 .psty5{
-  margin-top: 20rpx;
+  margin-top: 15rpx;
 }
 .vam{  vertical-align: middle;}

@@ -1,7 +1,7 @@
 <!--pages/changeshop/index.wxml-->
 <view>
   <block wx:for="{{nearshop}}" wx:key="{{index}}">
-    <view class="list {{num==index ? 'active':''}}" bindtap="changshop" data-name="{{item.shopname}}" wx:key="{{index}}">
+    <view class="list {{num==index ? 'active':''}}" bindtap="changshop" data-name="{{item.shopname}}" wx:key="{{index}}" data-id="{{index}}">
       <view class="title">{{item.shopname}}</view>
       <view class="listcont">
         <view class="">
