@@ -1,5 +1,6 @@
 
 // pages/changeshop/index.js
+var app=getApp()
 Page({
 
   /**
@@ -19,6 +20,7 @@ Page({
     this.setData({
       num: num
     })
+    app.globalData.shopname=name
     setTimeout(function () {
       console.log(name)
       wx.switchTab({
@@ -31,6 +33,7 @@ Page({
   },
   onLoad: function (options) {
     let name = options.shopname
+    console.log(options.shopname)
     const that = this
     that.setData({
       myLatitude: options.myLatitude,

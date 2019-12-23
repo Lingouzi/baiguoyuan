@@ -1,2 +1,22 @@
 <!--pages/pingtuanlist/index.wxml-->
-<text>pages/pingtuanlist/index.wxml</text>
+<view class="ptpage">
+  <block wx:for="{{ptlist}}" :key="{{index}}">
+    <view class="ptinf" data-id="{{item.id}}">
+      <view class="join-num">{{item.ptnum}}</view>
+      <image src="../images/ptimges.jpg" class="ptimg1"></image>
+      <view class="ptname">{{item.name}}</view>
+      <view class="ptdesc">{{item.descr1}}</view>
+      <view class="ptinfs">
+        <text class="ptprice1">{{item.ptprice.substring(0,item.ptprice.index('.'))}}</text>
+        <text class="ptprice2">{{item.ptprice.substring(item.ptprice.index('.'))}}</text>
+        <text class="ptprice3">{{item.price}}</text>    
+        <text class="ptnum">已团{{item.num}}件</text> 
+        <text class="ptbtn">去拼团</text>          
+        </view>
+    </view>
+
+  </block>
+
+
+</view>
+

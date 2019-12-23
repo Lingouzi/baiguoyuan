@@ -40,9 +40,48 @@ Page({
       ]
 
   },
+
 gosearch(){
   wx.navigateTo({
     url: "/pages/search/index"
+  })
+},
+getnearshop(){
+  const that = this
+  wx.request({
+    url: wx.getStorageSync('config').nearshop_url,
+    header: wx.getStorageSync('header'),
+    success(res) {
+      wx.hideToast()
+      if (res.data.code == 200) {
+        let shop = res.data.data.shoplist
+        let nearshop = [], shoplist = []
+        let mindisc
+        shop.forEach((item,index)=> {
+          let s = that.distance(that.data.myLatitude, that.data.myLongitude, item.latitude, item.longitude)
+          if (index == 0 || mindisc > s) {
+            mindisc = s
+            shoplist=item
+            
+          }
+        })
+        that.setData({
+          shopname: shoplist.shopname
+        })
+        app.globalData.shopname = shoplist.shopname
+        console.log(app.globalData.shopname)
+        console.log("hopname")
+
+      } else {
+        let mess = res.data.message
+        wx.showToast({
+          title: mess,
+          icon: 'success',
+          duration: 2000
+        })
+      }
+    },
+    fail(){}
   })
 },
 gonearshop(){
@@ -126,11 +165,21 @@ gethotlist(){
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData({
-    //   shopname: options.shopname
-    // })
-    this.gethotlist()
-    this.getgoodlist()
+    const that=this
+    wx.getLocation({
+      type: 'gcj02',
+      success: function (res) {
+        that.setData({
+          myLatitude: res.latitude,
+          myLongitude: res.longitude
+        })
+        that.getPoiList(res.longitude, res.latitude)
+        that.gethotlist()
+        that.getgoodlist()
+        that.getnearshop()
+      }
+    })
+
   },
 
   imgHeight: function (e) {
@@ -171,16 +220,6 @@ gethotlist(){
   onReady: function () {
     const that=this
     let token = wx.getStorageSync('token')
-    wx.getLocation({
-      type:'gcj02',
-      success: function(res) {
-        that.setData({
-          myLatitude: res.latitude,
-          myLongitude: res.longitude
-        })
-        that.getPoiList(res.longitude,res.latitude)
-      }
-    })
     if(token){
       wx.request({
         url: wx.getStorageSync('config').member_url,
@@ -209,10 +248,28 @@ gethotlist(){
     }
 
   },
+  distance(la1, lo1, la2, lo2) {
+    var La1 = la1 * Math.PI / 180.0;
+    var La2 = la2 * Math.PI / 180.0;
+    var La3 = La1 - La2;
+    var Lb3 = lo1 * Math.PI / 180.0 - lo2 * Math.PI / 180.0;
+    var s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(La3 / 2), 2) + Math.cos(La1) * Math.cos(La2) * Math.pow(Math.sin(Lb3 / 2), 2)));
+    s = s * 6378.137;
+    s = Math.round(s * 10000) / 10000;
+    s = s.toFixed(2);
+    return s;
+  },
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if ((app.globalData.shopname !== '')&& (this.data.shopname != app.globalData.shopname)){
+            this.setData({
+              shopname: app.globalData.shopname
+            })
+            this.gethotlist()
+            this.getgoodlist()
+    }
 
   },
 

@@ -1,1 +1,46 @@
 /* pages/pingtuanlist/index.wxss */
+.ptinf{
+  margin: 25rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+.join-num{
+  font-size: 38rpx;
+  color: #fff;
+  background-color: #f88a0b;
+  position: absolute;
+}
+.ptimg1{
+  width: 100%;
+  height:calc((100vw - 50rpx) * 0.3581)
+}
+.ptname{
+  font-size: 36rpx;
+  color: #333;
+  padding-top: 25rpx;
+}
+.ptdesc{
+  font-size: 24rpx;
+  color: #9c9c9c;
+  padding-top: 5rpx;
+  padding-bottom: 30rpx;
+}
+.ptprice1{
+  font-weight: 500;
+  font-size: 42rpx;
+  color: #f88a0b;
+}
+.ptprice2{
+  font-size: 26rpx;
+  color: #f88a0b;
+  padding-right: 15rpx;
+}
+.ptprice3{
+  font-size: 18rpx;
+  color: #333;
+  padding-right: 20rpx;
+}
+.ptnum{
+  font-size: 24rpx;
+  color: #9c9c9c; 
+}
