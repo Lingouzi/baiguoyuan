@@ -9,7 +9,8 @@ Page({
     name:"",
     sexindex:0,
     birthday:'',
-    user:''
+    user:'',
+    sexarray:['男','女']
   },
   changesex(e){
     this.setData({
@@ -23,11 +24,6 @@ Page({
   },
   putmyinfo(){
     const that=this
-    wx.showToast({
-      title: '修改中',
-      icon:'loading',
-      duration:2000
-    })
     wx.request({
       url: wx.getStorageSync('config').changeinfo_url,
       header: that.data.header,
@@ -35,12 +31,13 @@ Page({
       data:{
         token:"that.data.token",
         // token: that.data.token,
-        sex: that.data.sex,
+        sex: that.data.sexarray[that.data.sexindex],
         birthday: that.data.birthday,
         user: that.data.user,
         name: that.data.name
       },
       success(res){
+        
         if (res.data.code == 200) {
           wx.showToast({
             title: '修改成功',
@@ -78,7 +75,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("2")
     const that=this
     wx.request({
       url: wx.getStorageSync('config').userinfo_url,
@@ -125,12 +121,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log("1")
-    wx.hideTabBar({})
-    this.setData({
-      token: wx.getStorageSync('token').access_token,
-      header: wx.getStorageSync('header')
-    })
 
   },
 

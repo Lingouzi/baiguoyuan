@@ -1,2 +1,67 @@
-<!--pages/member/index.wxml-->
-<text>pages/member/index.wxml</text>
+<view>
+  <view class="top">
+      <view wx:if='{{statue}}' class="top_logo">
+        <image src="{{customer_logo}}" bindtap="gomyinfo"></image>
+        <view class="top_inf1">
+          <view class="fz25">{{name}}</view>
+          <view class="fz23 pt15 img10" bindtap="golevel">{{level}}</view>
+        </view>
+      </view>
+      <view wx:else class="top_logo">
+        <view class="img13"><open-data type="userAvatarUrl"></open-data></view>
+        <view class="top_inf2"  bindtap="gologin">
+          <view class="fz30">{{inf1}}</view>
+          <view class="fz23 pt10" >{{inf2}}</view>
+        </view> 
+      </view>  
+    <view class="top-menu">
+      <view bindtap="goshop1">
+      {{integral}}
+      <view class="fz23">积分商城</view>
+      </view>
+      <view bindtap="gocode">
+      {{code}}
+      <view class="fz23">优惠券</view>
+      </view>
+      <view bindtap="gomoney">
+      {{money}}
+      <view class="fz23">钱包.充值</view>
+      </view>
+    </view>
+    <view class="banner1">
+      <image src="../images/mem2.png"></image>
+    </view>
+  </view>
+    <view class="menu">
+      <view class="menu-inf1" bindtap="goqian">
+        <view class="img1"><text class="img11"></text>签到</view>
+        <text>赢积分 集果卡 换好礼</text>
+      </view>
+      <view class="menu-inf2" bindtap="gomembercode">
+        <view class="img2"><text class="img12"></text>会员码</view>
+        <text>到店扫码 便捷支付</text>
+      </view>
+    </view>
+    <view class="list">
+      <view class="img4 listli" bindtap="goshop2">心享商城</view>
+      <view class="img5 listli" bindtap="goaddress">地址管理</view>
+      <view class="img6 listli" bindtap="gohelp">客服帮助</view>
+      <view class="img7 listli" bindtap="gocoupon">礼品卡</view>
+      <view class="img8 listli" bindtap="goopinion">意见反馈</view>
+      <view class="img9 listli" bindtap="goset">设置</view>
+    </view>
+    <view class="appinf">
+      <view class="appinf1">
+        <image src="../images/logo.png"></image>
+        <text class="appinf11">百果园App</text>
+      </view>
+      <view class="appinf2" bindtap="goApp">
+        下载App体验更佳
+      </view>
+    
+    </view>
+
+
+
+</view>
+

@@ -1,1 +1,16 @@
 /* pages/order/index.wxss */
+.bg1{
+  background-color: #f6f6f6
+}
+.taplist{
+  display: flex;
+  padding: 30rpx 25rpx 20rpx;
+  justify-content: space-evenly;
+}
+.tapindex{
+  border-bottom: 3rpx solid transparent;
+}
+.tapindex.active{
+  color: #008a3c;
+  border-bottom-color: currentColor;
+}

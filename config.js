@@ -41,7 +41,8 @@ var config = {
   changeinfo_url: host + '/changeuserinfo',//修改信息
   freshen_url: "http://api.bzffs.cc/api/auth/refresh",//刷新token
   login_url:"http://api.bzffs.cc/api/auth/login",//登录，返回token
-  openid_url:"http://api.bzffs.cc/api/wechat/mini_program/openid"//获取openid
+  openid_url:"http://api.bzffs.cc/api/wechat/mini_program/openid",//获取openid
+  userinfo_url1: 'http://api.bzffs.cc/api/wechat/mini_program/userinfo'
 
 }
 var header = { 'x-service-id': '1' }

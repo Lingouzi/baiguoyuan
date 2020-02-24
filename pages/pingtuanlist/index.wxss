@@ -3,27 +3,36 @@
   margin: 25rpx;
   border-radius: 20rpx;
   position: relative;
+  box-shadow: 1rpx 1rpx 5rpx 5rpx #eee;
+  padding-bottom: 20rpx;
 }
 .join-num{
   font-size: 38rpx;
   color: #fff;
   background-color: #f88a0b;
   position: absolute;
+  padding: 10rpx 30rpx;
+  border-radius: 20rpx 0 20rpx 0;
 }
 .ptimg1{
   width: 100%;
-  height:calc((100vw - 50rpx) * 0.3581)
+  height:calc((100vw - 50rpx) * 0.3581);
+  border-radius: 10rpx 10rpx 0 0 ;
 }
 .ptname{
   font-size: 36rpx;
   color: #333;
   padding-top: 25rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
 }
 .ptdesc{
   font-size: 24rpx;
   color: #9c9c9c;
-  padding-top: 5rpx;
-  padding-bottom: 30rpx;
+  padding-top: 15rpx;
+  padding-bottom: 20rpx;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
 }
 .ptprice1{
   font-weight: 500;
@@ -36,11 +45,29 @@
   padding-right: 15rpx;
 }
 .ptprice3{
-  font-size: 18rpx;
+  font-size: 24rpx;
   color: #333;
-  padding-right: 20rpx;
+  padding-left: 20rpx;
+  text-decoration: line-through;
 }
 .ptnum{
   font-size: 24rpx;
   color: #9c9c9c; 
+  padding-left: 20rpx;
+}
+.ptbtn{
+  color: #fff;
+  font-size: 35rpx;
+  background-image: linear-gradient(to right, #fdbc61,#ffa20d );
+  padding: 15rpx 30rpx;
+  float: right;
+  border-radius: 30rpx;
+  margin-top: -15rpx;
+}
+.ptinfs{
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+.ptpage{
+  margin-bottom: 20rpx;
 }

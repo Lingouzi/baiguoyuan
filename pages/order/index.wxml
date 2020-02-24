@@ -1,2 +1,18 @@
 <!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<view>
+  <view class="taplist">
+  <block wx:for="{{nameitem}}" wx:key="{{index}}">  
+  <text class="tapindex {{currentIndex==index ? 'active':''}}">{{item}}</text>
+  </block>
+  </view>
+  <view>
+    <image src="../images/img1.jpg"></image>
+    <!-- <view>你的购物车空空如也~</view> -->
+    <!-- <view>您还没登录，请登录后查看订单</view> -->
+    <view>
+    <text></text>
+    </view>
+
+  </view>
+
+</view>

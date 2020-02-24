@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {},
+  "navigationBarTitleText": "百果园",
+  "navigationBarBackgroundColor": "#008c3c",
+  "navigationBarTextStyle": "white"
 }

@@ -1,11 +1,10 @@
 {
   "pages": 
-  [
-    "pages/index/index",
-    "pages/login/index", 
-    "pages/myinfo/index", 
-    "pages/pingtuanlist/index", 
+  [ "pages/index/index",
     "pages/member/index", 
+    "pages/myinfo/index", 
+    "pages/login/index", 
+    "pages/pingtuanlist/index", 
     "pages/proinfos/index", 
     "pages/addresslist/index", 
     "pages/puterror/index",
@@ -37,11 +36,11 @@
   "tabBar": {
     "list": [
       {
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "pages/images/index1.png",
-      "selectedIconPath": "pages/images/index.png"
-    },
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "pages/images/index1.png",
+        "selectedIconPath": "pages/images/index.png"
+      },
     {
       "pagePath": "pages/pingtuanlist/index",
       "text": "拼团",

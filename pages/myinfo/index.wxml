@@ -7,8 +7,8 @@
     <view class="psty1">
       <text class="psty5">性别</text>
       <view class="psty5 psty4">
-        <picker value="{{sexindex}}" range="{{sex}}" bindchange="changesex">
-          {{sex[sexindex]}}<text class="iconfont icon-iconfontzhizuobiaozhun19"></text>
+        <picker bindchange="changesex" value="{{sexindex}}" range="{{sexarray}}" >
+          <view>{{sexarray[sexindex]}}<text class="iconfont icon-iconfontzhizuobiaozhun19"></text></view>
         </picker>
       </view>
     </view>

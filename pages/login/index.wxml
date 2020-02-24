@@ -5,7 +5,7 @@
   <view class="name">百果园+</view>
 </view>
 <view>
-  <button class="btn1 fz30">微信用户快捷登录</button>
+  <button class="btn1 fz30" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信用户快捷登录</button>
   <button class="btn2 fz30">手机号登录/注册</button>
 </view>
 <view class="fz20 col2">

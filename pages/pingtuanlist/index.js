@@ -19,6 +19,7 @@ Page({
    */
   getptlist(){
     const that=this
+    console.log(that.data.shopname)
     wx.request({
       url: wx.getStorageSync('config').pingtuan_url,
       header: wx.getStorageSync('header'),
@@ -26,10 +27,11 @@ Page({
         shopname:that.data.shopname
       },
       success(res){
+        console.log(that.data.ptlist.length)
         if(res.data.code=200){
-          if (that.data.ptlist.length!=0){
+          if (that.data.ptlist.length<=0){
             that.setData({
-              ptlist: res.data.data
+              ptlist: [...that.data.ptlist,...res.data.data]
               })
           }else{
             that.setData({
@@ -53,6 +55,10 @@ Page({
   },
 
   onLoad: function (options) {
+    this.setData({
+      shopname: app.globalData.shopname
+    })
+    this.getptlist()
   },
 
   /**
@@ -65,10 +71,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({
-      shopname: app.globalData.shopname
-    })
-    this.getptlist()
+
 
 
   },
@@ -98,7 +101,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    if (this.data.num<this.data.total){
+    if (this.data.ptlist.length<this.data.total){
       this.setData({
         page:this.data.page + 1
       })
